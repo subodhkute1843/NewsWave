@@ -6,7 +6,7 @@ export class NewsItem extends Component {
     return (
         <div className="my-3">
         <div className="card" style={{width: "18rem"}}>
-            <img src={imageUrl} className="card-img-top" alt="news"/>
+            <img src={imageUrl? imageUrl : "https://static.toiimg.com/thumb/msid-47529300,width-1070,height-580,imgsize-110164,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"} className="card-img-top" alt="news"/>
             <div className="card-body">
                 <h5 className="card-title">{title}...</h5>
                 <p className="card-text">{description}...</p>
