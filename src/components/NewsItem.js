@@ -1,0 +1,19 @@
+import React, { Component } from 'react'
+
+export class NewsItem extends Component {
+  render() {
+    let {title, description} = this.props;
+    return (
+        <div className="card" style={{width: "18rem"}}>
+            <img src="https://i.insider.com/6542d1473cc84b4dfafa5ef2?width=1200&format=jpeg" className="card-img-top" alt="..."/>
+            <div className="card-body">
+                <h5 className="card-title">{title}</h5>
+                <p className="card-text">{description}</p>
+                <a href="/newsdetail" className="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    )
+  }
+}
+
+export default NewsItem
