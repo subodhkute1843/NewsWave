@@ -6,21 +6,22 @@ import { News } from "./components/News";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
+  pagesize = 15;
   render() {
     return (
       <div>
         <BrowserRouter>
           <Navbar />
-          {/* <News pagesize={6} category="sports" /> */}
+          {/* <News pagesize={this.pagesize} category="sports" /> */}
           <Routes>
-          <Route exact path="/" element={<News key="general" pagesize={6} category="general" />}/>
-            <Route exact path="/business" element={<News key="business" pagesize={6} category="business" />}/>
-            <Route exact path="/entertainment" element={<News key="entertainment" pagesize={6} category="entertainment" />}/>
-            <Route exact path="/general" element={<News key="general" pagesize={6} category="general" />}/>
-            <Route exact path="/health" element={<News key="health" pagesize={6} category="health" />}/>
-            <Route exact path="/science" element={<News key="science" pagesize={6} category="science" />}/>
-            <Route exact path="/sports" element={<News key="sports" pagesize={6} category="sports" />}/>
-            <Route exact path="/technology" element={<News key="technology" pagesize={6} category="technology" />}/>
+          <Route exact path="/" element={<News key="general" pagesize={this.pagesize} category="general" />}/>
+            <Route exact path="/business" element={<News key="business" pagesize={this.pagesize} category="business" />}/>
+            <Route exact path="/entertainment" element={<News key="entertainment" pagesize={this.pagesize} category="entertainment" />}/>
+            <Route exact path="/general" element={<News key="general" pagesize={this.pagesize} category="general" />}/>
+            <Route exact path="/health" element={<News key="health" pagesize={this.pagesize} category="health" />}/>
+            <Route exact path="/science" element={<News key="science" pagesize={this.pagesize} category="science" />}/>
+            <Route exact path="/sports" element={<News key="sports" pagesize={this.pagesize} category="sports" />}/>
+            <Route exact path="/technology" element={<News key="technology" pagesize={this.pagesize} category="technology" />}/>
             {/* <Route path="*" element={<NoPage />}></Route> */}
           </Routes>
         </BrowserRouter>
