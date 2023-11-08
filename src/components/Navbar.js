@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-export class Navbar extends Component {
-  static propTypes = {};
-
-  render() {
+// export class Navbar extends Component {
+  const Navbar = () => {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             NewsWave
@@ -41,7 +39,6 @@ export class Navbar extends Component {
         </div>
       </nav>
     );
-  }
 }
 
 export default Navbar;

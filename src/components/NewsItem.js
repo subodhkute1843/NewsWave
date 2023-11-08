@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class NewsItem extends Component {
-  render() {
-    let {title, description, imageUrl, newsUrl, date, source} = this.props;
+// export class NewsItem extends Component {
+    const NewsItem = (props) => {
+    let {title, description, imageUrl, newsUrl, date, source} = props;  //this.props;
     return (
       <div className="my-3">
         <div className="card">
@@ -13,10 +13,7 @@ export class NewsItem extends Component {
             <span className="badge rounded-pill bg-danger"> {source} </span>
           </div>
           <img
-            src={
-              imageUrl
-                ? imageUrl
-                : "https://static.toiimg.com/thumb/msid-47529300,width-1070,height-580,imgsize-110164,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"
+            src={ imageUrl? imageUrl: "https://static.toiimg.com/thumb/msid-47529300,width-1070, height-580,imgsize-110164,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"
             }
             className="card-img-top"
             alt="news"
@@ -41,7 +38,6 @@ export class NewsItem extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default NewsItem
