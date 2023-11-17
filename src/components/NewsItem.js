@@ -1,41 +1,49 @@
 import React from 'react'
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+
 
 // export class NewsItem extends Component {
     const NewsItem = (props) => {
     let {title, description, imageUrl, newsUrl, date, source} = props;  //this.props;
     return (
-      <div className="my-3">
-        <div className="card">
-          <div style={{display: 'flex',
-          justifyContent: 'flex-end',
-          position: 'absolute',
-          right: '0'}}>
-            <span className="badge rounded-pill bg-danger"> {source} </span>
-          </div>
-          <img
-            src={ imageUrl? imageUrl: "https://static.toiimg.com/thumb/msid-47529300,width-1070, height-580,imgsize-110164,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"
+      <div style={{ position: "relative" }} className="my-3">
+        <Card>
+          {/* <Badge badgeContent={source} color="error" /> */}
+          <CardMedia
+            component="img"
+            height="180"
+            image={
+              imageUrl
+                ? imageUrl
+                : "https://static.toiimg.com/thumb/msid-47529300,width-1070, height-580,imgsize-110164,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"
             }
-            className="card-img-top"
             alt="news"
           />
-          <div className="card-body">
-            <h5 className="card-title">{title}...</h5>
-            <p className="card-text">{description}...</p>
-            <p className="card-text">
-              <small className="text-body-secondary">
-                {new Date(date).toGMTString()}
-              </small>
-            </p>
-            <a
+          <CardContent>
+            <Typography variant="h5" component="div">
+              {title}...
+            </Typography>
+            <Typography variant="body2" color="textSecondary">
+              {description}...
+            </Typography>
+            <Typography variant="body2" color="textSecondary" style={{ marginTop: '15px' }}>
+              <small>{new Date(date).toGMTString()}</small>
+            </Typography>
+            <Button
+              variant="contained"
               href={newsUrl}
-              rel="noreferrer"
               target="_blank"
-              className="btn btn-dark"
+              rel="noreferrer"
+              style={{ marginTop: '12px' }}
             >
               Read More
-            </a>
-          </div>
-        </div>
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     );
 }

@@ -65,7 +65,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
   
   return (
     <>
-      <h2 className="text-center" style={{ margin: "35px 0px", marginTop: '90px' }}>
+      <h2 className="text-center" style={{ margin: "15px 0px", marginTop: '120px' }}>
         NewsWave - Top {capitalizeFirstLetter(props.category)}{" "}
         Headlines
       </h2>
